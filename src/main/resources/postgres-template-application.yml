@@ -1,0 +1,17 @@
+server:
+  port : ${PORT:5555}
+
+spring:
+  profiles:
+    active: Dev
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: randomquotes
+  datasource:
+    url: jdbc:postgresql://#{DatabaseServer}:5432/postgres
+    username: '#{DatabaseUsername | YamlSingleQuoteEscape}'
+    password: "#{DatabasePassword | YamlDoubleQuoteEscape}"
+  flyway:
+    locations: classpath:db/migration/{vendor}

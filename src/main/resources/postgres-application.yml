@@ -1,0 +1,17 @@
+server:
+  port : ${PORT:5555}
+
+spring:
+  profiles:
+    active: Dev
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: randomquotes
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASS:docker}
+  flyway:
+    locations: classpath:db/migration/{vendor}

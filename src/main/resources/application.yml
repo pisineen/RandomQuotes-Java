@@ -1,0 +1,21 @@
+# The configuration defines the settings used in a local development environment
+# to give developers the ability to clone, develop and build without any
+# additional configuration.
+
+server:
+  port : ${PORT:5555}
+
+spring:
+  profiles:
+    active: Dev
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    dbcp2:
+      driver-class-name: org.h2.Driver
+  flyway:
+    locations: classpath:db/migration/{vendor}
