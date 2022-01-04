@@ -124,7 +124,7 @@
             </dependencies>
             <build>
                 <plugins>
-                    <plugin>
+<!--                     <plugin>
                      <groupId>org.owasp</groupId>
                      <artifactId>dependency-check-maven</artifactId>
                      <version>${dependency-check-maven.version}</version>
@@ -134,12 +134,12 @@
                            <format>json</format>
                         </formats>
                      </configuration>
-                    </plugin>
-                    <plugin>
+                    </plugin> -->
+<!--                     <plugin>
                      <groupId>org.sonarsource.scanner.maven</groupId>
                      <artifactId>sonar-maven-plugin</artifactId>
                      <version>3.8.0.2131</version>
-                  </plugin>
+                    </plugin> -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
